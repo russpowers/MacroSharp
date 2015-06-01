@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacroSharp", "MacroSharp\MacroSharp.csproj", "{42778190-193E-400F-891C-ACA9D975E0AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacroSharp.ExampleMacros", "MacroSharp.ExampleMacros\MacroSharp.ExampleMacros.csproj", "{1B6FBD6E-83DE-463E-B4F5-B1AC1956FA88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MacroSharp.Examples", "MacroSharp.Examples\MacroSharp.Examples.csproj", "{ACB9D7A1-BA0F-4C30-87FC-B367BA640687}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{42778190-193E-400F-891C-ACA9D975E0AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42778190-193E-400F-891C-ACA9D975E0AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42778190-193E-400F-891C-ACA9D975E0AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B6FBD6E-83DE-463E-B4F5-B1AC1956FA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B6FBD6E-83DE-463E-B4F5-B1AC1956FA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B6FBD6E-83DE-463E-B4F5-B1AC1956FA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B6FBD6E-83DE-463E-B4F5-B1AC1956FA88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACB9D7A1-BA0F-4C30-87FC-B367BA640687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB9D7A1-BA0F-4C30-87FC-B367BA640687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB9D7A1-BA0F-4C30-87FC-B367BA640687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB9D7A1-BA0F-4C30-87FC-B367BA640687}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

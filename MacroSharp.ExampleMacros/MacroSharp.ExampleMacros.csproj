@@ -5,14 +5,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{42778190-193E-400F-891C-ACA9D975E0AA}</ProjectGuid>
+    <ProjectGuid>{1B6FBD6E-83DE-463E-B4F5-B1AC1956FA88}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MacroSharp</RootNamespace>
-    <AssemblyName>MacroSharp</AssemblyName>
+    <RootNamespace>MacroSharp.ExampleMacros</RootNamespace>
+    <AssemblyName>MacroSharp.ExampleMacros</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-	<ReferencePath>$(RoslynBinaryPath)</ReferencePath>
+    <ReferencePath>$(RoslynBinaryPath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,18 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-	<Reference Include="Microsoft.CodeAnalysis, Version=42.42.42.42" />
+    <Reference Include="Microsoft.CodeAnalysis, Version=42.42.42.42" />
     <Reference Include="Microsoft.CodeAnalysis.CSharp, Version=42.42.42.42" />
     <Reference Include="System" />
-    <Reference Include="System.Collections.Immutable, Version=1.1.36.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Collections.Immutable.1.1.36\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Reflection.Metadata, Version=1.0.21.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reflection.Metadata.1.0.21\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,22 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyLoader.cs" />
-    <Compile Include="Attributes\MethodMacroAttribute.cs" />
-    <Compile Include="Attributes\TypeMacroAttribute.cs" />
-    <Compile Include="IMacroTransform.cs" />
-    <Compile Include="MacroCSharpSyntaxRewriter.cs" />
-    <Compile Include="MacroCompiler.cs" />
-    <Compile Include="MacroSymbolVisitor.cs" />
-    <Compile Include="MacroTransform.cs" />
-    <Compile Include="MacroPluginAttribute.cs" />
-    <Compile Include="MacroRegistry.cs" />
-    <Compile Include="TransformContext.cs" />
+    <Compile Include="NotifyPropertyChanged.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WellKnownTypes.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\MacroSharp\MacroSharp.csproj">
+      <Project>{42778190-193e-400f-891c-aca9d975e0aa}</Project>
+      <Name>MacroSharp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
