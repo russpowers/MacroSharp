@@ -104,11 +104,6 @@ namespace MacroSharp
                 // We will need to re-compute the semantic model since the compilation has been modified
                 _transformContext.ResetSemanticModel();
 
-                /*if (!UpdatedNodes.ContainsKey(originalNode.SyntaxTree))
-					UpdatedNodes[originalNode.SyntaxTree] = new List<SyntaxPair>();
-
-				UpdatedNodes[originalNode.SyntaxTree].Add(new SyntaxPair(originalNode, _transformContext.Compilation));*/
-
                 return true;
             }
             else

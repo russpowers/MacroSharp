@@ -24,20 +24,7 @@ namespace MacroSharp
             var symbolVisitor = new MacroSymbolVisitor(context.Compilation, wellKnownTypes, registry);
 
             foreach (var s in context.Compilation.SourceModule.GlobalNamespace.GetMembers())
-            {
                 s.Accept(symbolVisitor);
-            }
-
-            /*foreach (var treeToUpdate in _symbolVisitor.UpdatedNodes.Keys)
-			{
-				var pairs = _symbolVisitor.UpdatedNodes[treeToUpdate];
-				var newRoot = treeToUpdate.GetRoot()
-					.ReplaceNodes(pairs.Select(x => x.OldNode), (old, newer) => pairs.First(x => x.OldNode == old).NewNode);
-
-				var newTree = treeToUpdate.WithRootAndOptions(newRoot, treeToUpdate.Options);
-
-				compilation = compilation.ReplaceSyntaxTree(treeToUpdate, newTree);
-			}*/
 
             context.Compilation = symbolVisitor.Compilation;
             foreach (var diagnostic in symbolVisitor.Diagnostics)
