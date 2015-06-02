@@ -40,7 +40,7 @@ And the generated code looks like this:
 - Clone my fork of Roslyn: https://github.com/russpowers/roslyn
 - Install the nuget dependencies by opening a command prompt in the cloned Roslyn folder and typing: `Src\.nuget\nuget restore Src\Roslyn.sln`
 - Open src/RoslynLight.sln in VS2015 RC and build
-- Clone this
+- Clone this into a separate folder
 - Edit RoslynCommon.targets and change the `RoslynBinaryPath` to point to the binary folder of the Roslyn you just built
 - Open MacroSharp.sln in VS 2015 RC
 - Build all
