@@ -35,18 +35,28 @@ And the generated code looks like this:
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
     }
 
-# Getting Started
-- Be sure you have VS2015 RC installed
-- Clone my fork of Roslyn: https://github.com/russpowers/roslyn
-- Install the nuget dependencies by opening a command prompt in the cloned Roslyn folder and typing: `Src\.nuget\nuget restore Src\Roslyn.sln`
-- Open src/RoslynLight.sln in VS2015 RC and build
-- Clone this into a separate folder
-- Edit RoslynCommon.targets and change the `RoslynBinaryPath` to point to the binary folder of the Roslyn you just built
-- Open MacroSharp.sln in VS 2015 RC
-- Build all
-- Switch the startup project to MacroSharp.Examples and Run.
+# Getting started
+1. Be sure you have VS2015 (any version) installed
+2. Clone my fork of Roslyn: https://github.com/russpowers/roslyn
+3. Install the nuget dependencies by opening a command prompt in the cloned Roslyn folder and typing: `nuget.exe restore Roslyn.sln`
+4. Open src/Roslyn.sln in VS2015 and build
+5. Clone this into a separate folder
+6. Edit RoslynCommon.targets and change the `RoslynBinaryPath` to point to the binary folder of the Roslyn you just built
+7. Open MacroSharp.sln in VS 2015
+8. Build all
+9. Switch the startup project to MacroSharp.Examples and Run.
+
+# To use macros in a new project
+- Follow the above steps 1-8
+- Create a new macro project `A` (where the macros will be stored)
+- Create a new project that will use the macro project `B` (console, class library, whatever)
+- Add a reference to MacroSharp.dll in both `A` and `B` projects
+- Add a reference to `A` in `B`
+- Edit `B`'s .csproj file by adding `<CscToolPath>*ROSLYN PATH*\Binaries\Debug or Release</CscToolPath>` and `<CscToolExe>csc2.exe</CscToolExe>` to the first `<PropertyGroup>`.  Example: `<CscToolPath>D:\roslyn\Binaries\Debug</CscToolPath>` `<CscToolExe>csc2.exe</CscToolExe>`
+- In one of `B`'s .cs files, add an assembly attribute `[assembly:MacroSharp.MacroPlugin]`
 
 # Notes
+
 The first build with macros will take a couple of seconds because it has to startup an external version of Roslyn to compile.  Subsequent compiles are normal speed.
 
 There is only one example right now, NotifyPropertyChanged.  It automatically implements INotifyPropertyChanged for a class and emits PropertyChanged events for auto properties.

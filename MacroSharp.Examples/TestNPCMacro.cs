@@ -19,6 +19,9 @@ namespace MacroSharp.Examples
         {
             get
             {
+
+
+
                 return _nameNoNPC;
             }
             set

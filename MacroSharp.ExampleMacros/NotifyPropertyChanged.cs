@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using F = Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using M = MacroSharp.MacroSyntaxFactory;
 using Microsoft.CodeAnalysis.CSharp;
 
 namespace MacroSharp.ExampleMacros
